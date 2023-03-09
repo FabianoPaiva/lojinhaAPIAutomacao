@@ -45,7 +45,7 @@ public class ProdutoTest {
         // status code retornado foi 422
         given()
                 .contentType(ContentType.JSON)
-                .head("token", this.token)
+                .header("token", this.token)
                 .body(ProdutoDataFactory.criarProdutoComumComOValorIgualA(0.00))
         .when()
                 .post("/v2/produtos")
@@ -62,7 +62,7 @@ public class ProdutoTest {
         // status code retornado foi 422
         given()
                 .contentType(ContentType.JSON)
-                .head("token", this.token)
+                .header("token", this.token)
                 .body(ProdutoDataFactory.criarProdutoComumComOValorIgualA(7000.01))
             .when()
                 .post("/v2/produtos")
